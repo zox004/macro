@@ -21,7 +21,7 @@
 1. 브라우저 오른쪽 상단의 **점 세개** 클릭
 2. **도움말** -> **Chrome 정보**를 선택
 
-![Untitled](https://user-images.githubusercontent.com/56228085/190916263-e0347932-1ddc-4f0f-8b70-2bdc59a3c282.png)
+![Untitled](https://user-images.githubusercontent.com/56228085/190917022-f3e0188e-bd27-4fd5-8ef3-160ae0cebef0.png)
 
 나는 버전 105.0.5195.125(공식 빌드) (64비트) 를 사용하고 있어
 
@@ -31,7 +31,7 @@
 
 별도 설치 없이, 해당 파일을 필요한 곳으로 이동하여 사용하면 된다.
 
-![Untitled 1](https://user-images.githubusercontent.com/56228085/190916273-63074115-54d5-40c4-b78b-ad7e03bdf1b2.png)
+![Untitled 1](https://user-images.githubusercontent.com/56228085/190917034-61b7bb93-1056-407c-9b98-cbe329f90f02.png)
 
 ## II-2. Selenium
 
@@ -51,11 +51,11 @@ pip install selenium
 
 크롬에서 "Ctrl+Shift+C"를 누르면 검사 도구 기능을 이용할 수 있다.
 
-![Untitled 2](https://user-images.githubusercontent.com/56228085/190916279-246b9caa-cb2a-409b-ad8b-383fabd3a3e4.png)
+![Untitled 2](https://user-images.githubusercontent.com/56228085/190917044-3ece1239-dfd6-4c12-b08a-ddea5abdad76.png)
 
 혹은 F12를 눌러서 뜨는 개발자 도구 화면에서 왼쪽 상단 커서 모양을 클릭해도 된다.
 
-![Untitled 3](https://user-images.githubusercontent.com/56228085/190916287-b3a8394e-0706-4776-9be6-0a81a100ee6f.png)
+![Untitled 3](https://user-images.githubusercontent.com/56228085/190917049-e0384d51-9432-43b8-9c55-40cdc6db4018.png)
 
 이제 회원 입력 칸의 코드를 확인한다. 검사 도구를 실행하고, 회원 입력칸을 클릭하면 오른쪽에 해당 소스가 자동으로 표시되는 것을 알 수 있습니다. 여기서는 해당 input field의 id가 `login_id` 라는 점에 주목하자. 전체 코드를 검색해보면 id가 `login_id`인 요소는 회원 입력 칸 밖에 없다.
 
@@ -75,23 +75,23 @@ driver.find_element(By.ID, 'login_id').send_keys('test') # 회원번호
 driver.find_element(By.ID, 'login_pw').send_keys("1111") # 비밀번호
 ```
 
-![Untitled 4](https://user-images.githubusercontent.com/56228085/190916294-0448fce8-8022-4305-8934-261ca293c783.png)
+![Untitled 4](https://user-images.githubusercontent.com/56228085/190917054-53a866ce-48f3-4166-9bf9-b55ad8cf49ce.png)
 
 다음과 같이 selenium module을 불러올 수 없다면 다른 파이썬 버전에 설치되어 있는 경우가 있다.
 
 vscode 오른쪽 아래 파이썬 버전을 클릭하면 인터프리터 선택을 할 수 있는데 다음 추천해주는 파이썬 버전에 selenium module이 설치되어 있어 정상적으로 실행이 가능하다.
 
-![Untitled 5](https://user-images.githubusercontent.com/56228085/190916297-840b1238-c906-49f5-aac6-a32ac5d588d9.png)
+![Untitled 5](https://user-images.githubusercontent.com/56228085/190917057-561efe26-b753-4ca3-b325-3c1d5dacb6e5.png)
 
 정상적으로 실행이 되면 다음과 같이 새로운 창이 열리면서 id, pw가 정상적으로 입력이 되었다.
 
-![Untitled 6](https://user-images.githubusercontent.com/56228085/190916302-c4ba0030-8fd0-45e0-8aa2-325d2c88d866.png)
+![Untitled 6](https://user-images.githubusercontent.com/56228085/190917169-3e967f05-c0d0-4082-817a-13f4311e1760.png)
 
 ## III-2. 로그인 버튼 누르기
 
 검사 도구(Ctrl+Shift+C)를 이용하여 확인 버튼의 소스를 확인한다. 위에서 처럼 고유한 id가 없으므로, XPath를 이용한다. 해당 버튼에 해당하는 소스코드에 마우스 우클릭하여 Copy -> Copy full Xpath를 클릭한다. 
 
-![Untitled 7](https://user-images.githubusercontent.com/56228085/190916311-ea8e3603-5523-4a66-a8c4-ad92deafe3f4.png)
+![Untitled 7](https://user-images.githubusercontent.com/56228085/190917066-f4680c14-1955-442d-96c2-835526945fa1.png)
 
 `복사된 XPath:` /html/body/div[3]/div/div/div/div/form/div[4]/button[1]
 
@@ -140,7 +140,7 @@ driver.implicitly_wait(5)
 
 특정 기간에만 신청이 가능하기 때문에 다음과 같은 오류 메세지가 뜬다.
 
-![Untitled 8](https://user-images.githubusercontent.com/56228085/190916348-40ffd151-7900-452c-94a0-07c028d28619.png)
+![Untitled 8](https://user-images.githubusercontent.com/56228085/190917072-30b19013-0cb2-42f8-80eb-379031ed5017.png)
 
 그래서인지 신청수량을 입력하는 코드가 동작하지 않는다.
 
@@ -154,7 +154,7 @@ driver.implicitly_wait(5)
 
 현재 실행할 .py 경로 디렉터리에 저장해주면 된다. 코인판매 신청.xlsx을 다음 경로에 저장해주었다.
 
-![Untitled 8](https://user-images.githubusercontent.com/56228085/190916360-3f39cb88-c2ea-4299-a886-5289cbbc5e77.png)
+![Untitled 9](https://user-images.githubusercontent.com/56228085/190917076-565f394f-b27d-4d2b-b34a-0974804c9b37.png)
 
 따로 엑셀 파일들이 저장되어 있는 폴더가 있다면 그 폴더의 절대경로를 써주면 된다.
 
@@ -228,7 +228,7 @@ user_info.to_excel('코인판매 신청(완료).xlsx', index=False)
 
 `index=False` 를 해주지 않으면 저장된 엑셀 첫번째 열에 index가 저장되기 때문에 False를 해준다.
 
-![Untitled 10](https://user-images.githubusercontent.com/56228085/190916374-23a0ca99-b4a8-474a-aac4-be58fa8195d4.png)
+![Untitled 10](https://user-images.githubusercontent.com/56228085/190917087-23f691e7-8bba-4406-9ccf-1af6081a40bb.png)
 
 위와 같이 새로운 파일이 생성되었다.
 
